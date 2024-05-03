@@ -1,0 +1,30 @@
+.introduction-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ensures the content is centered vertically */
+    max-height: 400px;
+    gap: 20px; /* Space between text and image */
+}
+
+/* Responsive behavior */
+@media (min-width: 600px) { /* Adjust the breakpoint to your needs */
+    .introduction-content {
+        flex-direction: row; /* Switches to horizontal layout on wider screens */
+    }
+}
+
+.introduction-text, .introduction-image {
+    max-height: 500px; /* Example max-height; adjust as needed */
+}
+
+.introduction-image {
+    width: 100%;
+    height: auto;
+}
+
+.personal-photo {
+    width: 100%;
+    height: auto;
+}
