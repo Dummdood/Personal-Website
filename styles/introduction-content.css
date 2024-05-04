@@ -1,30 +1,56 @@
+/* Base styling for the introduction section */
 .introduction-content {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh; /* Ensures the content is centered vertically */
-    max-height: 400px;
-    gap: 20px; /* Space between text and image */
+    flex-direction: row; /* default layout with items side-by-side */
+    align-items: center; /* centers items vertically within the container */
+    justify-content: center; /* centers items horizontally in the container */
+    padding: 20px;
+    gap: 20px; /* ensures space between text and image */
 }
 
-/* Responsive behavior */
-@media (min-width: 600px) { /* Adjust the breakpoint to your needs */
+.introduction-text,
+.introduction-image {
+    flex: 1; /* allows flex items to grow and shrink but not beyond their content size */
+    max-width: 50%; /* prevents either section from taking more than half the container's width */
+}
+
+.introduction-text h1,
+.introduction-text h2 {
+    margin: 10px 0; /* spacing between the header elements */
+}
+
+.introduction-image img.personal-photo {
+    width: 100%; /* full width of its container */
+    max-width: 400px; /* maximum width of the image to prevent over-stretching */
+    max-height: 600px; /* maximum image height */
+    height: auto; /* maintains the aspect ratio */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 800px) {
     .introduction-content {
-        flex-direction: row; /* Switches to horizontal layout on wider screens */
+        flex-direction: column; /* stack items vertically on small screens */
+    }
+
+    .introduction-text,
+    .introduction-image {
+        max-width: 100%; /* allows each section to take full width of the container on small screens */
+    }
+
+    .introduction-image img.personal-photo {
+        width: auto; /* prevents the image from stretching to fit the container */
+        max-width: 100%; /* ensures the image does not exceed the width of the container */
     }
 }
 
-.introduction-text, .introduction-image {
-    max-height: 500px; /* Example max-height; adjust as needed */
+/* Additional media query to handle the layout on larger screens */
+@media (min-width: 801px) {
+    .introduction-content {
+        max-width: 800px; /* maximum width of the entire content section */
+        margin: auto; /* centers the content section horizontally */
+    }
 }
 
-.introduction-image {
-    width: 100%;
-    height: auto;
-}
 
-.personal-photo {
-    width: 100%;
-    height: auto;
-}
+
+
