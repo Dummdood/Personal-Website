@@ -20,9 +20,9 @@
 }
 
 .introduction-image img.personal-photo {
-    width: 100%; /* full width of its container */
+    width: auto; /* adjusts width to maintain aspect ratio */
     max-width: 400px; /* maximum width of the image to prevent over-stretching */
-    max-height: 600px; /* maximum image height */
+    max-height: 600px; /* new maximum height */
     height: auto; /* maintains the aspect ratio */
 }
 
@@ -50,6 +50,7 @@
         margin: auto; /* centers the content section horizontally */
     }
 }
+
 
 
 
